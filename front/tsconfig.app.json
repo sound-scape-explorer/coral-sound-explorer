@@ -1,0 +1,28 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/***/*.spec.tsx"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "es2022",
+    "moduleResolution": "Node",
+    "lib": [
+      "webworker",
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ]
+  },
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}
