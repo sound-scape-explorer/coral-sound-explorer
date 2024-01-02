@@ -17,7 +17,7 @@ Jinja2==3.1.2
 joblib==1.2.0
 kiwisolver==1.4.4
 lazy_loader==0.1
-lit==15.0.7
+lit==17.0.6
 llvmlite==0.39.1
 markdown-it-py==3.0.0
 MarkupSafe==2.1.2
