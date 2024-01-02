@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@vueuse/components": "^10.3.0",
-    "@vueuse/core": "^10.3.0",
+    "@vueuse/core": "^10.7.1",
     "audiobuffer-slice": "^0.0.7",
     "chroma-js": "^2.4.2",
     "colormap": "^2.3.2",
