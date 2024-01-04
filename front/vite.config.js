@@ -8,7 +8,7 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 import wasm from 'vite-plugin-wasm';
 
 const isProduction = process.env.NODE_ENV === 'production';
-export const base = isProduction ? '/sound-scape-explorer/' : '/';
+export const base = isProduction ? '/coral-sound-explorer/' : '/';
 
 /**
  * Do not add following dependencies to code splitting as it will result in corrupted runtime code execution:
