@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.3...v1.0.4) (2024-01-04)
+
+
+### Bug Fixes
+
+* **Release:** Prepare next versions correctly ([41741a6](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/41741a6aadf70d3d4e74af3ed4152f0ff43267d3))
+
 ## [1.0.3](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.2...v1.0.3) (2024-01-04)
 
 
