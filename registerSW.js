@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/coral-sound-explorer/sw.js', { scope: '/coral-sound-explorer/' })})}
