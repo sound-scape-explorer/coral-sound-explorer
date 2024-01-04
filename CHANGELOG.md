@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.2...v1.0.3) (2024-01-04)
+
+
+### Bug Fixes
+
+* Empty commit to trigger github pages ([9f55131](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/9f5513102e35cce8f4de7aaa31e52a78cfe08c31))
+
 ## [1.0.2](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.1...v1.0.2) (2024-01-04)
 
 
