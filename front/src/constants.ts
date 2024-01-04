@@ -1,6 +1,6 @@
 export const ALERT_TIMER = 3000;
 
-export const EXPORT_FILENAME = 'SSE';
+export const EXPORT_FILENAME = 'CSE';
 
 export const RENDERING_DELAY_SLOW = 250;
 

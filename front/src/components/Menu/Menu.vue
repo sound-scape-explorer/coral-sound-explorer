@@ -47,7 +47,6 @@ registerKey(KeyboardShortcut.trajectories, () => toggle('trajectories'));
 registerKey(KeyboardShortcut.relativeTrajectories, () =>
   toggle('relativeTrajectories'),
 );
-registerKey(KeyboardShortcut.indicators, () => toggle('indicators'));
 registerKey(KeyboardShortcut.digested, () => toggle('digested'));
 </script>
 
@@ -161,15 +160,6 @@ registerKey(KeyboardShortcut.digested, () => toggle('digested'));
         text="Relative Trajectories"
       >
         <timer-outline />
-      </MenuItem>
-
-      <MenuItem
-        :disabled="!isSelectedRef.value"
-        :toggle="toggle"
-        draggable-key="indicators"
-        text="Indicators"
-      >
-        <bar-chart-outline />
       </MenuItem>
 
       <MenuItem
