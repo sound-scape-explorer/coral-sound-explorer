@@ -10,7 +10,6 @@ export enum KeyboardShortcut {
   details = 'd',
   trajectories = 'x',
   relativeTrajectories = 'r',
-  indicators = 'v',
   digested = 'b',
   time = 't',
   timePlayPause = ' ',

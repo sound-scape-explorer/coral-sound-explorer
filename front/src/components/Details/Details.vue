@@ -163,29 +163,6 @@ watch(intervalDetailsRef, () => {
           {{ intervalLabelsRef?.[index] }}
         </n-gi>
       </n-grid>
-
-      <div class="separator" />
-
-      <div class="title">Indicators</div>
-
-      <n-grid
-        v-if="aggregatedIndicatorsRef.value !== null"
-        :cols="2"
-        x-gap="12"
-      >
-        <n-gi v-for="(ex, index) in nonNnExtractorsRef.value">
-          <n-tag
-            :bordered="false"
-            size="small"
-          >
-            {{ ex.name }}
-          </n-tag>
-
-          {{
-            aggregatedIndicatorsRef.value[index].values[clickedRef.value ?? 0]
-          }}
-        </n-gi>
-      </n-grid>
     </div>
   </AppDraggable>
 </template>
