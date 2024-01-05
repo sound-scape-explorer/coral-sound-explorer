@@ -14,13 +14,7 @@ import {colorsStore} from './colorsStore';
  */
 
 const optionsRef = computed<string[]>(() => {
-  const defaultOptions: ColorType[] = [
-    'intervalIndex',
-    'by1h',
-    'by10min',
-    'isDay',
-    'cycleDay',
-  ];
+  const defaultOptions: ColorType[] = ['cycleDay'];
 
   if (labelsPropertiesRef.value === null) {
     return defaultOptions;
