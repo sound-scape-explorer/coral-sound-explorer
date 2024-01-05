@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.4...v1.0.5) (2024-01-05)
+
+
+### Bug Fixes
+
+* **Front/Colors:** Remove unused color types ([a37459f](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/a37459fef984460bd137a98e94fb43c53455574f))
+
 ## [1.0.4](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.3...v1.0.4) (2024-01-04)
 
 
