@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.5...v1.0.6) (2024-01-10)
+
+
+### Bug Fixes
+
+* **Front:** Use correct logo name for PWA manifest ([557ff49](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/557ff49305c9c1bad1bb0137c388b7a199584dda))
+
 ## [1.0.5](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.4...v1.0.5) (2024-01-05)
 
 
