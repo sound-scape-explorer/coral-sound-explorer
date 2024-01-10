@@ -54,21 +54,16 @@ export default defineConfig({
     analyzer({summaryOnly: true}),
     vitePwa({
       registerType: 'autoUpdate',
-      includeAssets: ['/logo.svg', '/logo.png'],
+      includeAssets: ['/logo-cse.svg'],
       manifest: {
         short_name: 'CSE',
         name: 'CoralSoundExplorer',
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'logo.svg',
+            src: 'logo-cse.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
-          },
-          {
-            src: 'logo.png',
-            sizes: '512x512',
-            type: 'image/png',
           },
         ],
       },
