@@ -24,8 +24,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Jérémy Rouch"
         src="https://sound-scape-explorer.github.io/img/cse/authors/jeremy-rouch.jpeg"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
@@ -41,8 +41,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Bamdad Sabbagh"
         src="https://sound-scape-explorer.github.io/img/cse/authors/bamdad-sabbagh.jpeg"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
@@ -60,8 +60,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Lana Minier"
         src="https://sound-scape-explorer.github.io/img/cse/authors/lana-minier.jpeg"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
@@ -77,8 +77,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Frédéric Sèbe"
         src="https://sound-scape-explorer.github.io/img/cse/authors/frederic-sebe.png"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
@@ -96,8 +96,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Nicolas Mathevon"
         src="https://sound-scape-explorer.github.io/img/cse/authors/nicolas-mathevon.jpeg"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
@@ -113,8 +113,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
       <img
         alt="Rémi Emonet"
         src="https://sound-scape-explorer.github.io/img/cse/authors/remi-emonet.jpg"
-        width="200"
-        height="auto"
+        width="auto"
+        height="200"
       />
       <p align="center">
         <a
