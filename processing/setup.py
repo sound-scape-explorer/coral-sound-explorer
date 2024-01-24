@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 # processing/utils/get_version_from_setup.py
 setup(
     name="cse",
-    version="1.0.6",
+    version="1.0.7",
     description="CoralSoundExplorer",
     author="Bamdad Sabbagh",
     author_email="hi@bamdad.fr",

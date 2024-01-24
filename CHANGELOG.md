@@ -1,3 +1,11 @@
+## [1.0.7](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.6...v1.0.7) (2024-01-24)
+
+
+### Bug Fixes
+
+* **LICENSE:** Add LM + Specify order ([7f152cc](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/7f152cc4f52159fb2ab5a5e4c6141459138610c9))
+* **README:** Add authors and update sponsors ([b5cb2fb](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/b5cb2fbe05006e9c0a9759ab16db97d4a8982a95))
+
 ## [1.0.6](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.5...v1.0.6) (2024-01-10)
 
 
