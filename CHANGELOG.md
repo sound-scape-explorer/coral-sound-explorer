@@ -1,3 +1,11 @@
+## [1.0.9](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.8...v1.0.9) (2024-01-25)
+
+
+### Bug Fixes
+
+* **Examples/CoralReefLight:** Remove unused extractors and digesters + Regenerate h5 ([35f19a5](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/35f19a5d4f5d884e9148ff7f2ab64cc84f3be4cb))
+* **Examples/NewCampaign:** Update default config ([f6541df](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/f6541dfa36493b31f2ea6466efbdc563a92ecdcd))
+
 ## [1.0.8](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.7...v1.0.8) (2024-01-25)
 
 
