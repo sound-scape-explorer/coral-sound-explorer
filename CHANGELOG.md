@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.7...v1.0.8) (2024-01-25)
+
+
+### Bug Fixes
+
+* **Front/AppHeatmaps:** Display trimmed labels (can have leading spaces in config) ([2d54972](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/2d549728bd5b4f67b372e622d88ced6de8605010))
+* **README:** Improve authors layout ([b059a3b](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/b059a3bd3a065cddd8d3fede90fa1b346b102f8c))
+
 ## [1.0.7](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.6...v1.0.7) (2024-01-24)
 
 
