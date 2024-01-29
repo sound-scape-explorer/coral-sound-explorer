@@ -1,12 +1,12 @@
 <div align="center">
 
 <img
-  alt="logo"
-  width="200"
-  src="https://sound-scape-explorer.github.io/img/logo-cse.svg"
+alt="logo"
+width="200"
+src="https://sound-scape-explorer.github.io/img/logo-cse.svg"
 />
 
-# [_CoralSoundExplorer_](https://sound-scape-explorer.github.io/coral-sound-explorer/)
+# _CoralSoundExplorer_
 
 ![](https://sound-scape-explorer.github.io/img/demo.png)
 
@@ -14,7 +14,8 @@
 
 ## Documentation
 
-Please consult our [documentation website](https://sound-scape-explorer.github.io).
+Please consult
+our [documentation website](https://sound-scape-explorer.github.io).
 
 ## Authors
 
@@ -149,6 +150,22 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
     </td>
     <td align="center">
       <a
+        href="https://www.eneslab.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          alt="enes-lab"
+          src="https://sound-scape-explorer.github.io/img/cse/sponsors/enes-lab.jpg"
+          width="200"
+          height="auto"
+        />
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a
         href="https://laboratoirehubertcurien.univ-st-etienne.fr/"
         target="_blank"
         rel="noopener noreferrer"
@@ -161,8 +178,6 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
         />
       </a>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <a
         href="https://www.saint-etienne-metropole.fr/"
@@ -177,6 +192,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
         />
       </a>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <a
         href="https://www.ofb.gouv.fr/"
@@ -191,8 +208,6 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
         />
       </a>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <a
         href="https://www.ephe.psl.eu/"
@@ -207,6 +222,8 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
         />
       </a>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <a
         href="https://www.iufrance.fr/"
@@ -221,8 +238,6 @@ Please consult our [documentation website](https://sound-scape-explorer.github.i
         />
       </a>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <a
         href="https://celya.universite-lyon.fr/labex-celya-151124.kjsp"
