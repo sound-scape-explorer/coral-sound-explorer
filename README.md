@@ -3,7 +3,7 @@
 <img
 alt="logo"
 width="200"
-src="https://sound-scape-explorer.github.io/img/logo-cse.svg"
+src="https://sound-scape-explorer.github.io/img/cse/logo.svg"
 />
 
 # _CoralSoundExplorer_
