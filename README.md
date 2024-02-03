@@ -12,6 +12,20 @@ src="https://sound-scape-explorer.github.io/img/cse/logo.svg"
 
 </div>
 
+## How to cite this software
+
+Please cite this software as:
+
+```text
+Jérémy Rouch, Bamdad Sabbagh, Lana Minier, Frédéric Sèbe, Nicolas Mathevon & Rémi Emonet, 2023. CoralSoundExplorer software, https://sound-scape-explorer.github.io/docs/CSE/
+```
+
+CoralSoundExplorer is the topic of an open-source paper which details the
+software settings, the graphical representations used to visually explore
+soundscapes and their temporal dynamics, and the analysis methods and
+measurements proposed: Minier L et al., submit. Visualization and
+quantification of coral reef soundscapes using CoralSoundExplorer software.
+
 ## Documentation
 
 Please consult
