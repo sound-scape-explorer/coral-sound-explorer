@@ -1,3 +1,12 @@
+## [1.0.10](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.9...v1.0.10) (2024-02-04)
+
+
+### Bug Fixes
+
+* **README:** Add ENES logo ([e2490f2](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/e2490f2e8e0e695d411e482e35d8d4d56c1fb59e))
+* **README:** Add software citation block ([9f7385c](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/9f7385cdf13dcd17f5222cfe11aa79d61d6c373e))
+* **README:** Update CSE logo ([463ad73](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/463ad7387881a004a8df9633b8691a34c47221c9))
+
 ## [1.0.9](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.8...v1.0.9) (2024-01-25)
 
 
