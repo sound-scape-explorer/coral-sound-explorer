@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.11...v1.0.12) (2024-02-07)
+
+
+### Bug Fixes
+
+* **Front/Audio:** Apply green and blue channels to decibel scales in spectrograms ([5a5c60d](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/5a5c60dad009b13aa718b06a1d99d359dd775a39))
+
 ## [1.0.11](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.10...v1.0.11) (2024-02-07)
 
 
