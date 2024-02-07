@@ -27,6 +27,7 @@ const handleChange = () => {
       <input
         ref="inputRef"
         type="file"
+        accept=".h5"
         @change="handleChange"
         :disabled="importLockRef.value"
       />

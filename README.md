@@ -29,7 +29,7 @@ quantification of coral reef soundscapes using CoralSoundExplorer software.
 ## Documentation
 
 Please consult
-our [documentation website](https://sound-scape-explorer.github.io).
+our [documentation website](https://sound-scape-explorer.github.io/docs/CSE/).
 
 ## Authors
 

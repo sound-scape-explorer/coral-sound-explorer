@@ -1,9 +1,9 @@
 import colormap from 'colormap';
+import Spectrogram, {type RGBA} from 'src/common/spectrogram';
 import type {Ref} from 'vue';
 import {computed, reactive, watch, watchEffect} from 'vue';
 import WaveSurfer from 'wavesurfer.js';
-import Cursor from 'wavesurfer.js/dist/plugin/wavesurfer.cursor.js';
-import Spectrogram from 'wavesurfer.js/dist/plugin/wavesurfer.spectrogram.js';
+import Cursor from 'wavesurfer.js/src/plugin/cursor';
 import type {WaveSurferParams} from 'wavesurfer.js/types/params';
 
 import {FFT_SIZE, WAVE} from '../../constants';
@@ -30,11 +30,13 @@ export function useWaveSurfer({
   spectrogramContainerRef,
 }: UseWaveSurferProps) {
   const colorsRef = computed(() => {
-    return colormap({
+    const colors = colormap({
       colormap: spectrogramColorRef.value,
       nshades: 256,
       format: 'float',
     });
+
+    return colors as RGBA[] & {length: 256};
   });
 
   const createWaveSurfer = () => {
@@ -71,7 +73,7 @@ export function useWaveSurfer({
         }),
         Cursor.create({
           showTime: true,
-          opacity: 1,
+          opacity: 'solid',
           customShowTimeStyle: {
             'background-color': '#000',
             'color': '#fff',
