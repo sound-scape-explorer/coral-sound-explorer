@@ -554,13 +554,11 @@ export default class SpectrogramPlugin {
       const logPosition = (i / l) * Math.log10(this.colorMap.length + 1);
       const scaledIndex = Math.pow(10, logPosition) - 1;
       const c = Math.min(Math.floor(scaledIndex), this.colorMap.length - 1);
-      const red = this.colorMap[c][0];
-      const hex = Math.floor(red * 255);
-
-      imageData.data[l - i] = hex;
-      imageData.data[l - i + 1] = 0;
-      imageData.data[l - i + 2] = 0;
-      imageData.data[l - i + 3] = 255;
+      const [r, g, b, a] = this.colorMap[c];
+      imageData.data[l - i] = Math.floor(r * 255);
+      imageData.data[l - i + 1] = Math.floor(g * 255);
+      imageData.data[l - i + 2] = Math.floor(b * 255);
+      imageData.data[l - i + 3] = Math.floor(a * 255);
     }
 
     ctx.putImageData(imageData, ctx.canvas.width - width, heightOffset * 0.5);
@@ -592,14 +590,12 @@ export default class SpectrogramPlugin {
   }
 }
 
-const bits = 32; // AudioBuffer
+const bits = 16; // AudioBuffer
 const dynamicRange = 20 * Math.log10(2 ** bits);
 
 function pixelsToDBFS(position, total) {
   const max = 0;
   const min = -dynamicRange;
   const scale = Math.log10(1 + total);
-  const dbfsValue =
-    min + (max - min) * (Math.log10(1 + total - position) / scale);
-  return dbfsValue;
+  return min + (max - min) * (Math.log10(1 + total - position) / scale);
 }
