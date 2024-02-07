@@ -1,3 +1,14 @@
+## [1.0.11](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.10...v1.0.11) (2024-02-07)
+
+
+### Bug Fixes
+
+* **Front/Audio:** Add dBFS legend to spectrograms ([fb291aa](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/fb291aaeafccdac0504ddf94ea68c900e96b754a))
+* **Front/Audio:** Fix wavesurfer typings ([0c78780](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/0c787803263ed85492954ffacc3808647ca322e3))
+* **Front/Import:** Accept h5 files only ([1e509eb](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/1e509eb679e40fc9c9df56c7d79d6ec7a0bf9847))
+* **Front:** Use new logo as favicon ([4e70b62](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/4e70b628d50828d786532e8eb22f0ee9b2b24def))
+* **README:** Point link directly to CSE documentation ([da52798](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/da52798fbbff266a1ced0f7ced5deaef1f847976))
+
 ## [1.0.10](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.9...v1.0.10) (2024-02-04)
 
 
