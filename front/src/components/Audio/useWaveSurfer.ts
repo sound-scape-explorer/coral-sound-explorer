@@ -1,9 +1,9 @@
 import colormap from 'colormap';
+import Spectrogram, {type RGBA} from 'src/common/spectrogram';
 import type {Ref} from 'vue';
 import {computed, reactive, watch, watchEffect} from 'vue';
 import WaveSurfer from 'wavesurfer.js';
 import Cursor from 'wavesurfer.js/src/plugin/cursor';
-import Spectrogram, {type RGBA} from 'wavesurfer.js/src/plugin/spectrogram';
 import type {WaveSurferParams} from 'wavesurfer.js/types/params';
 
 import {FFT_SIZE, WAVE} from '../../constants';
