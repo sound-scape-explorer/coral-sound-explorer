@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.12...v1.0.13) (2024-02-08)
+
+
+### Bug Fixes
+
+* **Front/Audio:** Display dBFS legend in linear scaling ([d103659](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/d103659d2859a2dc3286737fb3ffc16157741f55))
+
 ## [1.0.12](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.11...v1.0.12) (2024-02-07)
 
 
