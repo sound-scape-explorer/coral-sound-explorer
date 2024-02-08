@@ -550,10 +550,23 @@ export default class SpectrogramPlugin {
     const imageData = new ImageData(width, height);
     const l = imageData.data.length;
 
+    // log scale
+    // for (let i = 0; i < l; i += 4) {
+    //   const logPosition = (i / l) * Math.log10(this.colorMap.length + 1);
+    //   const scaledIndex = Math.pow(10, logPosition) - 1;
+    //   const c = Math.min(Math.floor(scaledIndex), this.colorMap.length - 1);
+    //   const [r, g, b, a] = this.colorMap[c];
+    //   imageData.data[l - i] = Math.floor(r * 255);
+    //   imageData.data[l - i + 1] = Math.floor(g * 255);
+    //   imageData.data[l - i + 2] = Math.floor(b * 255);
+    //   imageData.data[l - i + 3] = Math.floor(a * 255);
+    // }
+
+    // linear scale
     for (let i = 0; i < l; i += 4) {
-      const logPosition = (i / l) * Math.log10(this.colorMap.length + 1);
-      const scaledIndex = Math.pow(10, logPosition) - 1;
-      const c = Math.min(Math.floor(scaledIndex), this.colorMap.length - 1);
+      const linearPosition = (i / l) * (this.colorMap.length - 1);
+      const scaledIndex = Math.floor(linearPosition);
+      const c = Math.min(scaledIndex, this.colorMap.length - 1);
       const [r, g, b, a] = this.colorMap[c];
       imageData.data[l - i] = Math.floor(r * 255);
       imageData.data[l - i + 1] = Math.floor(g * 255);
@@ -575,7 +588,7 @@ export default class SpectrogramPlugin {
 
     for (let h = 0; h <= height; h += height / 10) {
       const y = startY + h;
-      const p = pixelsToDBFS(h, height);
+      const p = pixelsToDBFSLinear(h, height);
 
       ctx.beginPath();
       ctx.moveTo(startX, y);
@@ -584,7 +597,7 @@ export default class SpectrogramPlugin {
       ctx.lineWidth = 1;
       ctx.stroke();
 
-      const label = h === 0 ? `${p.toFixed(0)} dBFS` : `${p.toFixed(0)}`;
+      const label = h === 0 ? `${Math.round(p)} dBFS` : `${p.toFixed(0)}`;
       ctx.fillText(label, startX - fontSize + 2, startY + h);
     }
   }
@@ -593,9 +606,16 @@ export default class SpectrogramPlugin {
 const bits = 16; // AudioBuffer
 const dynamicRange = 20 * Math.log10(2 ** bits);
 
-function pixelsToDBFS(position, total) {
+function pixelsToDBFSLog(position, total) {
   const max = 0;
   const min = -dynamicRange;
   const scale = Math.log10(1 + total);
   return min + (max - min) * (Math.log10(1 + total - position) / scale);
+}
+
+function pixelsToDBFSLinear(position, total) {
+  const max = 0;
+  const min = -dynamicRange;
+  const linearPosition = (total - position) / total;
+  return min + (max - min) * linearPosition;
 }
