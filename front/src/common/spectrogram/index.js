@@ -550,28 +550,31 @@ export default class SpectrogramPlugin {
     const imageData = new ImageData(width, height);
     const l = imageData.data.length;
 
-    // log scale
-    // for (let i = 0; i < l; i += 4) {
-    //   const logPosition = (i / l) * Math.log10(this.colorMap.length + 1);
-    //   const scaledIndex = Math.pow(10, logPosition) - 1;
-    //   const c = Math.min(Math.floor(scaledIndex), this.colorMap.length - 1);
-    //   const [r, g, b, a] = this.colorMap[c];
-    //   imageData.data[l - i] = Math.floor(r * 255);
-    //   imageData.data[l - i + 1] = Math.floor(g * 255);
-    //   imageData.data[l - i + 2] = Math.floor(b * 255);
-    //   imageData.data[l - i + 3] = Math.floor(a * 255);
-    // }
+    const isLinear = false;
+    const ticksCount = 10;
 
-    // linear scale
-    for (let i = 0; i < l; i += 4) {
-      const linearPosition = (i / l) * (this.colorMap.length - 1);
-      const scaledIndex = Math.floor(linearPosition);
-      const c = Math.min(scaledIndex, this.colorMap.length - 1);
-      const [r, g, b, a] = this.colorMap[c];
-      imageData.data[l - i] = Math.floor(r * 255);
-      imageData.data[l - i + 1] = Math.floor(g * 255);
-      imageData.data[l - i + 2] = Math.floor(b * 255);
-      imageData.data[l - i + 3] = Math.floor(a * 255);
+    if (isLinear) {
+      for (let i = 0; i < l; i += 4) {
+        const logPosition = (i / l) * Math.log10(this.colorMap.length + 1);
+        const scaledIndex = Math.pow(10, logPosition) - 1;
+        const c = Math.min(Math.floor(scaledIndex), this.colorMap.length - 1);
+        const [r, g, b, a] = this.colorMap[c];
+        imageData.data[l - i] = Math.floor(r * 255);
+        imageData.data[l - i + 1] = Math.floor(g * 255);
+        imageData.data[l - i + 2] = Math.floor(b * 255);
+        imageData.data[l - i + 3] = Math.floor(a * 255);
+      }
+    } else {
+      for (let i = 0; i < l; i += 4) {
+        const linearPosition = (i / l) * (this.colorMap.length - 1);
+        const scaledIndex = Math.floor(linearPosition);
+        const c = Math.min(scaledIndex, this.colorMap.length - 1);
+        const [r, g, b, a] = this.colorMap[c];
+        imageData.data[l - i] = Math.floor(r * 255);
+        imageData.data[l - i + 1] = Math.floor(g * 255);
+        imageData.data[l - i + 2] = Math.floor(b * 255);
+        imageData.data[l - i + 3] = Math.floor(a * 255);
+      }
     }
 
     ctx.putImageData(imageData, ctx.canvas.width - width, heightOffset * 0.5);
@@ -586,9 +589,11 @@ export default class SpectrogramPlugin {
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
 
-    for (let h = 0; h <= height; h += height / 10) {
+    for (let h = 0; h <= height; h += height / ticksCount) {
       const y = startY + h;
-      const p = pixelsToDBFSLinear(h, height);
+      const p = isLinear
+        ? pixelsToDBFSLinear(h, height)
+        : pixelsToDBFSLog(h, height);
 
       ctx.beginPath();
       ctx.moveTo(startX, y);
