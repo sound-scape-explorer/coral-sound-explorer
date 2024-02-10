@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.14...v1.0.15) (2024-02-10)
+
+
+### Bug Fixes
+
+* **Front/Audio:** Apply correct linear dBFS tick values ([9998b38](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/9998b3857e1464a0b4054780643deb9c17610a47))
+
 ## [1.0.14](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.13...v1.0.14) (2024-02-09)
 
 
