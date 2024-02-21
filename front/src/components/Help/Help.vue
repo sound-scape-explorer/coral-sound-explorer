@@ -29,7 +29,7 @@ const shortcuts: Shortcut[] = [
 ];
 
 const openDocumentation = () => {
-  window.open('https://sound-scape-explorer.github.io');
+  window.open('https://sound-scape-explorer.github.io/docs/CSE/');
 };
 </script>
 
