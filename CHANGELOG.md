@@ -1,3 +1,13 @@
+## [1.0.16](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.15...v1.0.16) (2024-02-21)
+
+
+### Bug Fixes
+
+* **Front/Help:** Point directly to CSE docs ([be66736](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/be66736ca50f3e63b15823eaeae55174c06ecec9))
+* **Processing/Actions:** Improve code reuse for MDM exports ([5b72056](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/5b7205687458dc6c3daa4a0990e49212ad466701))
+* **Processing/Common:** Add storage reader for MDM ([02a8333](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/02a8333a165e932fccf2b6e358bae491e137835b))
+* **Processing:** Fix `SilhouetteDigester` ([5dc2ff5](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/5dc2ff58d1fc27cc2ae2ca0f694f84deacee13d9))
+
 ## [1.0.15](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.14...v1.0.15) (2024-02-10)
 
 
