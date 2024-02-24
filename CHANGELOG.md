@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.16...v1.0.17) (2024-02-24)
+
+
+### Bug Fixes
+
+* **Front/AppHeatmaps:** Add dynamic font sizes ([a1337e3](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/a1337e3e45a90da2482366364e98e8854e08a9ec))
+
 ## [1.0.16](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.15...v1.0.16) (2024-02-21)
 
 
