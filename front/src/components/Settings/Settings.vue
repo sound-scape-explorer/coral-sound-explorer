@@ -2,6 +2,7 @@
 import {NCheckbox, NGi, NGrid, NInput, NSelect, NTag} from 'naive-ui';
 import {PLOT_BACKGROUND, SPECTROGRAM_COLOR_MAPS} from 'src/constants';
 import {audioHostRef} from 'src/hooks/useAudioHost';
+import {plotlyFontSizeRef} from 'src/hooks/useHeatmapLayout';
 import {useKeyboard} from 'src/hooks/useKeyboard';
 import {convertToNaiveSelectOptions} from 'src/utils/convert-to-naive-select-options';
 import {computed} from 'vue';
@@ -88,6 +89,22 @@ const plotBackgroundOptionsRef = computed(() => {
         <n-checkbox
           v-model:checked="settingsStore.applyTimezone"
           class="checkbox"
+        />
+      </n-gi>
+
+      <n-gi class="gi">
+        <n-tag
+          :bordered="false"
+          size="small"
+        >
+          Plotly font size
+        </n-tag>
+        <n-input
+          v-model:value="plotlyFontSizeRef.value"
+          size="tiny"
+          type="number"
+          @inputBlur="() => unlockKeyboard()"
+          @inputFocus="() => lockKeyboard()"
         />
       </n-gi>
     </n-grid>
