@@ -1,5 +1,6 @@
 <script lang="ts" setup="">
 import {settingsStore} from 'src/components/Settings/settingsStore';
+import {plotlyFontSizeRef} from 'src/hooks/useHeatmapLayout';
 import {watch} from 'vue';
 
 import {useAppPlot} from './useAppPlot';
@@ -20,7 +21,7 @@ const props = defineProps<AppPlotProps>();
 
 const {divRef, refresh} = useAppPlot(props);
 
-watch([props, settingsStore], refresh);
+watch([props, settingsStore, plotlyFontSizeRef], refresh);
 </script>
 
 <template>

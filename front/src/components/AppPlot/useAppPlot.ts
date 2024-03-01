@@ -3,6 +3,7 @@ import Plotly from 'plotly.js-dist-min';
 import {PLOTLY_SIZE} from 'src/constants';
 import {ref, watch} from 'vue';
 
+import {plotlyFontSizeRef} from '../../hooks/useHeatmapLayout';
 import {usePlotConfig} from '../../hooks/usePlotConfig';
 import {settingsStore} from '../Settings/settingsStore';
 import type {AppPlotProps} from './AppPlot.vue';
@@ -62,6 +63,9 @@ export function useAppPlot(props: AppPlotProps) {
       clickmode: 'none',
       width: PLOTLY_SIZE,
       height: PLOTLY_SIZE,
+      font: {
+        size: Number(plotlyFontSizeRef.value),
+      },
       margin: {
         l: 50,
         r: 50,
