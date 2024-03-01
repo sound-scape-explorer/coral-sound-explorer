@@ -1,3 +1,10 @@
+## [1.0.18](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.17...v1.0.18) (2024-03-01)
+
+
+### Bug Fixes
+
+* **Front/AppPlot:** Add manual font sizes ([44d18b6](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/44d18b6e3d6f0184e5d85fecf49f2101c6952532))
+
 ## [1.0.17](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.16...v1.0.17) (2024-02-24)
 
 
