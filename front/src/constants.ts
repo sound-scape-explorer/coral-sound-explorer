@@ -44,7 +44,7 @@ export const TRACE_WIDTH_2D = 2;
 
 export const CURRENT_SCATTER_LEGEND_ID = 'current-scatter-legend';
 
-export const NN_EXTRACTORS = ['vgg', 'yamnet'];
+export const NN_EXTRACTORS = ['vgg', 'melogram', 'melspectrum'];
 
 // Plotly instances for Indicators and Digesters.
 export const PLOTLY_SIZE = 600;
