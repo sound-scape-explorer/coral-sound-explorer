@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.18...v1.1.0) (2024-11-08)
+
+
+### Features
+
+* **Examples:** Add new nn extractors to example configuration files ([c2e2d59](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/c2e2d59a19c9c34777c0a289e192e79a5232ddc9))
+* **Processing/Extractors:** Add new nn extractors (mel spectrogram and mel spectrum) ([d51916e](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/d51916ebf2705aa850d815c26d849e03e8abfae3))
+
 ## [1.0.18](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.17...v1.0.18) (2024-03-01)
 
 
