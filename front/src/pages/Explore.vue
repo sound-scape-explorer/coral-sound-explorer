@@ -5,7 +5,6 @@ import Details from 'src/components/Details/Details.vue';
 import Digested from 'src/components/Digested/Digested.vue';
 import Help from 'src/components/Help/Help.vue';
 import Import from 'src/components/Import/Import.vue';
-import Indicators from 'src/components/Indicators/Indicators.vue';
 import Label from 'src/components/Label/Label.vue';
 import Menu from 'src/components/Menu/Menu.vue';
 import RelativeTrajectories from 'src/components/RelativeTrajectories/RelativeTrajectories.vue';
@@ -50,7 +49,6 @@ onMounted(() => {
     <Audio />
     <Details />
 
-    <Indicators />
     <Digested />
 
     <Label />

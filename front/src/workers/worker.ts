@@ -544,12 +544,18 @@ export async function readRelativeTrajectories(
       const relativeTimestampsDataset = h5.get(
         relativeTimestampsPath,
       ) as Dataset;
+
+      const decilesPath = `${StoragePath.relative_traced_deciles}${pathSuffix}/${key}`;
+      const decilesDataset = h5.get(decilesPath) as Nullable<Dataset>;
+      const deciles =
+        (decilesDataset?.to_array() as [number, number][]) || null;
+
       const trajectoryName =
-        relativeTracedDataset.attrs['trajectory_name'].value.toString();
+        relativeTracedDataset.attrs['trajectory_name'].value?.toString() ?? '';
       const labelProperty =
-        relativeTracedDataset.attrs['label_property'].value.toString();
+        relativeTracedDataset.attrs['label_property'].value?.toString() ?? '';
       const labelValue =
-        relativeTracedDataset.attrs['label_value'].value.toString();
+        relativeTracedDataset.attrs['label_value'].value?.toString() ?? '';
 
       const relativeTrajectory: RelativeTrajectory = {
         index: Number(key),
@@ -560,6 +566,7 @@ export async function readRelativeTrajectories(
         timestamps: (relativeTimestampsDataset.to_array() as number[][]).map(
           (v) => v[0],
         ),
+        deciles: deciles,
       };
 
       relativeTrajectories.push(relativeTrajectory);

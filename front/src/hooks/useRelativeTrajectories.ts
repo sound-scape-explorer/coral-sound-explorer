@@ -13,6 +13,7 @@ export interface RelativeTrajectory {
   labelValue: string;
   values: number[];
   timestamps: number[];
+  deciles: Nullable<[number, number][]>;
 }
 
 interface RelativeTrajectoriesRef {

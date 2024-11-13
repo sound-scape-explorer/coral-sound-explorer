@@ -1,11 +1,17 @@
 <script lang="ts" setup>
 import {DownloadOutline} from '@vicons/ionicons5';
+import chroma from 'chroma-js';
 import {NButton, NCascader, NIcon} from 'naive-ui';
 import {Csv} from 'src/common/Csv';
 import AppDraggable from 'src/components/AppDraggable/AppDraggable.vue';
 import AppPlot, {type AppPlotProps} from 'src/components/AppPlot/AppPlot.vue';
 import {scatterLoadingRef} from 'src/components/Scatter/useScatterLoading';
-import {EXPORT_FILENAME} from 'src/constants';
+import {
+  EXPORT_FILENAME,
+  LOWER_DECILE_SUFFIX,
+  RELATIVE_TRAJECTORIES_FLAVOR,
+  UPPER_DECILE_SUFFIX,
+} from 'src/constants';
 import {
   relativeTrajectoriesRef,
   useRelativeTrajectories,
@@ -30,26 +36,53 @@ const optionsRef = computed(() => {
 const histogramValuesRef = ref<AppPlotProps['values']>([]);
 const histogramLabelsRef = ref<AppPlotProps['labels']>([]);
 const histogramNamesRef = ref<string[]>([]);
+const histogramColors = ref<string[]>([]);
 
 const handleUpdateValue = (indexes: number[]) => {
-  const selectedRelativeTrajectories = selectRelativeTrajectories(indexes);
+  const selected = selectRelativeTrajectories(indexes);
 
-  if (selectedRelativeTrajectories.length === 0) {
+  if (selected.length === 0) {
     histogramValuesRef.value = [];
     histogramLabelsRef.value = [];
     histogramNamesRef.value = [];
     return;
   }
 
-  histogramValuesRef.value = selectedRelativeTrajectories.map(
-    (rT) => rT.values,
-  );
+  const names: string[] = [];
+  const labels: string[][] = []; // timestamps
+  const values: number[][] = []; // series
+  const colors: string[] = [];
+  const s = chroma.scale(RELATIVE_TRAJECTORIES_FLAVOR).colors(selected.length);
 
-  histogramLabelsRef.value = selectedRelativeTrajectories.map((rT) =>
-    rT.timestamps.map((t) => t.toString()),
-  );
+  for (let i = 0; i < selected.length; i += 1) {
+    const {name, timestamps, deciles, values: v} = selected[i];
+    const color = s[i];
+    const ts = timestamps.map((t) => t.toString());
 
-  histogramNamesRef.value = selectedRelativeTrajectories.map((rT) => rT.name);
+    names.push(name);
+    labels.push(ts);
+    values.push(v);
+    colors.push(color);
+
+    if (deciles === null) {
+      continue;
+    }
+
+    names.push(`${name}${LOWER_DECILE_SUFFIX}`);
+    labels.push(ts);
+    values.push(deciles.map((q) => q[0]));
+    colors.push(color);
+
+    names.push(`${name}${UPPER_DECILE_SUFFIX}`);
+    labels.push(ts);
+    values.push(deciles.map((q) => q[1]));
+    colors.push(color);
+  }
+
+  histogramNamesRef.value = names;
+  histogramLabelsRef.value = labels;
+  histogramValuesRef.value = values;
+  histogramColors.value = colors;
 };
 
 const handleExportClick = () => {
@@ -68,25 +101,30 @@ const handleExportClick = () => {
     .map((values) => values.length)
     .reduce((a, b) => Math.max(a, b), 0);
 
+  // create time column
+  csv.addColumn('relative time');
+
   // create columns
   for (const name of histogramNamesRef.value) {
-    csv.addColumn(`${name} - relative time`);
-    csv.addColumn(`${name} - relative distance`);
+    csv.addColumn(name);
   }
 
+  // create rows
   for (let i = 0; i < maxLength; i += 1) {
-    let row: string[] = [];
+    const time = histogramLabelsRef.value[0][i];
+    let row: string[] = [time];
 
     for (const j in histogramNamesRef.value) {
-      const time = histogramLabelsRef.value[j][i];
-      const distance = histogramValuesRef.value[j][i];
+      const distance = histogramValuesRef.value[j][i] as unknown as
+        | string
+        | undefined;
+      let payload = '';
 
-      if (typeof time === 'undefined' || typeof distance === 'undefined') {
-        row = [...row, '', ''];
-        continue;
+      if (distance !== undefined) {
+        payload = distance.toString();
       }
 
-      row = [...row, time, distance.toString()];
+      row = [...row, payload];
     }
 
     csv.createRow();
@@ -132,10 +170,11 @@ const handleExportClick = () => {
       </n-button>
 
       <AppPlot
-        export-filename="relative-trajectories"
+        :colors="histogramColors"
         :labels="histogramLabelsRef"
         :names="histogramNamesRef"
         :values="histogramValuesRef"
+        export-filename="relative-trajectories"
         legend
         title="Relative Trajectories"
         xTitle="Relative daytime"
@@ -148,12 +187,12 @@ const handleExportClick = () => {
 <style lang="scss" scoped>
 .container {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  gap: 0.5rem;
-
+  justify-content: center;
   min-width: 20rem;
+
+  gap: 0.5rem;
 }
 
 .export {
