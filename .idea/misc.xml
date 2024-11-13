@@ -6,7 +6,7 @@
     <option name="pathToExecutable" value="$USER_HOME$/.local/bin/black" />
     <option name="sdkName" value="Python 3.10 (sound-scape-explorer)" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="Python 3.10 (sound-scape-explorer)" project-jdk-type="Python SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="Python 3.10 (coral-sound-explorer)" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
