@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.1.0...v1.2.0) (2024-11-15)
+
+
+### Bug Fixes
+
+* **Front:** Update pnpm lockfile version ([824477b](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/824477bdc16e77a7a2b6c043657d72a359517ad0))
+
+
+### Features
+
+* Add relative trajectories deviation from SSE 13.9.0 ([fc965c8](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/fc965c81b9b55b0f5302ce5c42a60ad90e662988))
+
 # [1.1.0](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.0.18...v1.1.0) (2024-11-08)
 
 
