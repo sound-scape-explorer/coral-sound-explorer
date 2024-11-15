@@ -9,15 +9,18 @@ export interface AppPlotProps {
   labels: string[][];
   values: number[][];
   names?: string[];
-  colors?: string[][];
+  colors: string[];
   title?: string;
   xTitle?: string;
   yTitle?: string;
   legend?: boolean;
   exportFilename: string;
+  hoverTemplate?: 'default' | 'relative-trajectories';
 }
 
-const props = defineProps<AppPlotProps>();
+const props = withDefaults(defineProps<AppPlotProps>(), {
+  hoverTemplate: 'default',
+});
 
 const {divRef, refresh} = useAppPlot(props);
 
@@ -34,7 +37,7 @@ watch([props, settingsStore, plotlyFontSizeRef], refresh);
 <style lang="scss" scoped>
 .histogram {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 </style>

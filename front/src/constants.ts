@@ -53,3 +53,7 @@ export enum PLOT_BACKGROUND {
   transparent = 'transparent',
   white = 'white',
 }
+
+export const RELATIVE_TRAJECTORIES_FLAVOR = 'Dark2';
+export const LOWER_DECILE_SUFFIX = '_lower_decile';
+export const UPPER_DECILE_SUFFIX = '_upper_decile';
