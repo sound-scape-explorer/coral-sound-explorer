@@ -2,9 +2,12 @@ from typing import List
 
 import numpy as np
 from h5py import Dataset
-
 from processing.config.bands.BandConfig import BandConfig
 from processing.config.integrations.IntegrationConfig import IntegrationConfig
+from processing.constants import MDM_SHAPE_LIMIT, MDM_DEFAULT
+from processing.errors.MeanDistancesMatrixOutOfMemoryWarning import (
+    MeanDistancesMatrixOutOfMemoryWarning,
+)
 from processing.storage.Storage import Storage
 from processing.storage.StoragePath import StoragePath
 
@@ -14,10 +17,15 @@ class MeanDistancesMatrix:
     def calculate(
         features: List[Dataset],
     ) -> List[List[float]]:
+        shape = len(features[0])
+
+        if shape > MDM_SHAPE_LIMIT:
+            MeanDistancesMatrixOutOfMemoryWarning("Filling storage with empty array...")
+            return MDM_DEFAULT
+
         from sklearn import metrics
 
-        samples_count = features[0].shape[0]
-        mean_distances_matrix = np.zeros([samples_count, samples_count])
+        mean_distances_matrix = np.zeros([shape, shape])
 
         for i in range(len(features)):
             previous_mean_distances_matrix = mean_distances_matrix
@@ -30,9 +38,7 @@ class MeanDistancesMatrix:
                 (previous_mean_distances_matrix * i) + current_mean_distances_matrix
             ) / (i + 1)
 
-        values = mean_distances_matrix.tolist()
-
-        return values
+            return mean_distances_matrix.tolist()
 
     @staticmethod
     def read_from_storage(

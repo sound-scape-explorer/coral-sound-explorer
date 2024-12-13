@@ -1,6 +1,3 @@
-from rich import print
-from rich.progress import track
-
 from processing.common.AggregatedReduceable import AggregatedReduceable
 from processing.common.ComputationUmapStorage import ComputationUmapStorage
 from processing.common.MeanDistancesMatrix import MeanDistancesMatrix
@@ -9,9 +6,15 @@ from processing.config.extractors.ExtractorStorage import ExtractorStorage
 from processing.config.integrations.IntegrationStorage import IntegrationStorage
 from processing.config.settings.SettingsStorage import SettingsStorage
 from processing.interfaces import MenuCallback
-from processing.reducers.UmapReducer import UmapReducer
 from processing.storage.Storage import Storage
 from processing.storage.StoragePath import StoragePath
+from processing.utils.compute_requirements_utils import (
+    get_compute_strategy,
+    ComputeStrategy,
+    compute_default,
+    compute_embeddings,
+    compute_pca,
+)
 from processing.utils.filter_nn_extractors import filter_nn_extractors
 from processing.utils.invoke_menu import invoke_menu
 from processing.utils.print_action import print_action
@@ -19,6 +22,7 @@ from processing.utils.validate_aggregated import validate_aggregated
 from processing.utils.validate_autoclusters import validate_autoclusters
 from processing.utils.validate_configuration import validate_configuration
 from processing.utils.walk_bands_integrations import walk_bands_integrations
+from rich import print
 
 
 @validate_configuration
@@ -33,7 +37,6 @@ def compute_requirements(
     print_action("Requirements computation started!", "start")
 
     ComputationUmapStorage.delete(storage)
-    storage.delete(StoragePath.mean_distances_matrix)
 
     settings = SettingsStorage.read_from_storage(storage)
     bands = BandStorage.read_from_storage(storage)
@@ -46,34 +49,27 @@ def compute_requirements(
         nn_extractors=nn_extractors,
     )
 
-    print(
-        f"Computing UMAPs..."
-        f" (iterations: {settings.computation_umap_iterations},"
-        f" dimensions: {settings.computation_umap_dimensions})"
-    )
+    strategy = get_compute_strategy(settings)
 
-    for ar in aggregated_reduceables:
-        features = ar.read_features_from_storage(storage)
-        for computation_index in track(
-            range(settings.computation_umap_iterations),
-            description=f"Band {ar.band.name}, integration {ar.integration.seconds}",
-        ):
-            umap = UmapReducer(min_dist=0)
-            umap.load(
-                dimensions=settings.computation_umap_dimensions,
-                seed=None,
-                features=features,
-            )
+    if strategy == ComputeStrategy.default:
+        compute_default(
+            storage=storage,
+            ars=aggregated_reduceables,
+            settings=settings,
+        )
+    elif strategy == ComputeStrategy.embeddings:
+        compute_embeddings(
+            storage=storage,
+            ars=aggregated_reduceables,
+        )
+    elif strategy == ComputeStrategy.pca:
+        compute_pca(
+            storage=storage,
+            ars=aggregated_reduceables,
+            settings=settings,
+        )
 
-            computation_features = umap.calculate()
-
-            ComputationUmapStorage.write(
-                storage=storage,
-                ar=ar,
-                data=computation_features,
-                index=computation_index,
-            )
-
+    storage.delete(StoragePath.mean_distances_matrix)
     print()
     print("Computing mean distances matrix...")
 
