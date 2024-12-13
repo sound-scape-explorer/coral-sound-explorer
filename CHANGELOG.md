@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.2.0...v1.3.0) (2024-12-13)
+
+
+### Bug Fixes
+
+* **Processing/ComputeRequirements:** Add 4GB hard limit to MDM size ([163da28](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/163da2894ab69cd0d934cb344f87472df412d25c))
+
+
+### Features
+
+* **Processing/ComputeRequirements:** Add strategies for using embeddings or pca reducer ([b56ac7c](https://github.com/sound-scape-explorer/coral-sound-explorer/commit/b56ac7c101f132816bcfa79cd24c81bb46494aba))
+
 # [1.2.0](https://github.com/sound-scape-explorer/coral-sound-explorer/compare/v1.1.0...v1.2.0) (2024-11-15)
 
 
